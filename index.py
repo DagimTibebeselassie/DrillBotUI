@@ -2,14 +2,14 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 
-# Create the Dash application instance
+# app inst
 app = dash.Dash(__name__)
 
-# Define the layout of the application
+# Layout
 app.layout = html.Div([
     #TODO
 ])
 
-# Run the Dash application
+# Run app
 if __name__ == '__main__':
     app.run_server(debug=True)
