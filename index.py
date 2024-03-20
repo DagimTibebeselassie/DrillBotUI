@@ -7,11 +7,13 @@ app = dash.Dash(__name__, external_stylesheets=['/assets/styles.css'])
 # Define the navigation bar layout
 navbar = html.Div([
     html.Nav([
-        html.H1("FOCUSbot"),
-        html.A("Control Panel", href="/page-1"),
-        html.A("Data Collection", href="/page-2"),
+        html.H1("FOCUSbot", className="logo"),
+        html.A("Home", href="/home", className="nav-link"),
+        html.A("Control Panel", href="/page-1", className="nav-link"),
+        html.A("Data Collection", href="/page-2", className="nav-link"),
     ], className="navbar")
 ])
+
 
 # Define the layout for the entire application
 app.layout = html.Div([
@@ -29,6 +31,13 @@ def display_page(pathname):
             html.H3('Page 1'),
             dcc.Markdown('''
                 This is the content of page 1.
+            ''')
+        ])
+    elif pathname == '/home':
+        return html.Div([
+            html.H3('Home'),
+            dcc.Markdown('''
+                This is the content of Home.
             ''')
         ])
     elif pathname == '/page-2':
