@@ -1,16 +1,50 @@
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc, html
+from dash.dependencies import Input, Output
 
-# app inst
-app = dash.Dash(__name__)
+app = dash.Dash(__name__, external_stylesheets=['/assets/styles.css'])
 
-# Layout
-app.layout = html.Div([
-    #TODO
+# Define the navigation bar layout
+navbar = html.Div([
+    html.Nav([
+        html.H1("FOCUSbot"),
+        html.A("Control Panel", href="/page-1"),
+        html.A("Data Collection", href="/page-2"),
+    ], className="navbar")
 ])
 
-# Run app
+# Define the layout for the entire application
+app.layout = html.Div([
+    dcc.Location(id='url', refresh=False),
+    navbar,
+    html.Div(id='page-content')
+])
+
+# Callback to update the page content based on the URL
+@app.callback(Output('page-content', 'children'),
+              [Input('url', 'pathname')])
+def display_page(pathname):
+    if pathname == '/page-1':
+        return html.Div([
+            html.H3('Page 1'),
+            dcc.Markdown('''
+                This is the content of page 1.
+            ''')
+        ])
+    elif pathname == '/page-2':
+        return html.Div([
+            html.H3('Page 2'),
+            dcc.Markdown('''
+                This is the content of page 2.
+            ''')
+        ])
+    else:
+        return html.Div([
+            html.H3('Home'),
+            dcc.Markdown('''
+                This is the home page.
+            ''')
+        ])
+
 if __name__ == '__main__':
     app.run_server(debug=True)
-
