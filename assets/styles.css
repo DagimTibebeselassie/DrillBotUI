@@ -6,7 +6,7 @@
     padding: 0px;
 }
 .navbar {
-    background-color: #030a24; /* Change the background color */
+    background-color: #000000; /* Change the background color */
     height: 80px;
     display: flex;
     align-items: center;
@@ -21,7 +21,6 @@
 
 .nav-link {
     margin-right: 10px; /* Adjust as needed */
-    color: #000000;
 }
 
 .navbar h1{
@@ -35,5 +34,59 @@
     padding: 10px;
 }
 
+.navbar-brand {
+    color: #ff0000; /* Change the color of the brand text */
+}
 
+.nav-link {
+    color: #000000; /* Change the color of the navigation links */
+}
 
+#upBtn{
+    height: 80px;
+    width: 80px;
+    margin-left: 400px;
+    transition: all 1s;
+    border: none;
+    background-color: transparent;
+}
+
+#upBtn:hover{
+    transform: translateY(-10px);
+}
+
+#downBtn{
+    height: 80px;
+    width: 80px;
+    transition: all 1s;
+    border: none;
+    background-color: transparent;
+}
+
+#downBtn:hover{
+    transform: translateY(10px);
+}
+
+#leftBtn{
+    height: 80px;
+    width: 80px;
+    transition: all 1s;
+    border: none;
+    background-color: transparent;
+}
+
+#leftBtn:hover{
+    transform: translateX(-10px);
+}
+
+#rightBtn{
+    height: 80px;
+    width: 80px;
+    transition: all 1s;
+    border: none;
+    background-color: transparent;
+}
+
+#rightBtn:hover{
+    transform: translateX(10px);
+}
