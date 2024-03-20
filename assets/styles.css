@@ -21,6 +21,7 @@
 
 .nav-link {
     margin-right: 10px; /* Adjust as needed */
+    color: #000000;
 }
 
 .navbar h1{
@@ -34,10 +35,3 @@
     padding: 10px;
 }
 
-.navbar-brand {
-    color: #ff0000; /* Change the color of the brand text */
-}
-
-.nav-link {
-    color: #000000; /* Change the color of the navigation links */
-}
