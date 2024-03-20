@@ -1,0 +1,43 @@
+###############################
+PASTE THIS INTO INDEX.PY 
+###############################
+
+html.Div([
+        html.Button("RESET", id = "reset_button", className = "reset")
+    ]),
+    html.Div([
+        html.Button("SAMPLE", id = "sample_button", className = "sample")
+    ])
+
+###############################
+PASTE THIS INTO STYLES.CSS
+###############################
+.reset{
+    margin-top: 50px;
+    border-radius: 50px;
+    background: #3b83c5;
+    padding: 20px;
+    width: 100px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 20px;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 2px;
+}
+
+.sample{
+    margin-left: 100px;
+    margin-top: -50px;
+    border-radius: 50px;
+    background: #3b83c5;
+    font-weight: bold;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 2px;
+}
