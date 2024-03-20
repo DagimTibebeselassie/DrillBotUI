@@ -1,22 +1,37 @@
-/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cambay:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:wght@500&display=swap');
 
-/* Custom styling for the navigation bar */
+
 *{
     margin: 0px;
     padding: 0px;
 }
 .navbar {
-    background-color: #006eff; /* Change the background color */
+    background-color: #000000; /* Change the background color */
     height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Cambay", sans-serif;
+}
+
+.logo {
+    float: left;
+    margin-right: auto;
+}
+
+.nav-link {
+    margin-right: 10px; /* Adjust as needed */
 }
 
 .navbar h1{
-    color: black;
+    color: rgb(255, 255, 255);
+    margin-left: 10px;
 }
 
-.navbar A{
+.navbar a{
     text-decoration: none;
-
+    color: rgb(255, 255, 255);
+    padding: 10px;
 }
 
 .navbar-brand {
@@ -24,5 +39,5 @@
 }
 
 .nav-link {
-    color: #0066ff; /* Change the color of the navigation links */
+    color: #000000; /* Change the color of the navigation links */
 }
