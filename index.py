@@ -4,6 +4,11 @@ from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 
 app = dash.Dash(__name__, external_stylesheets=['/assets/styles.css'])
+upBtn = r"\assets\UpBtn.png"
+downBtn = r"\assets\downBtn.png"
+leftBtn = r"\assets\leftBtn.png"
+rightBtn = r"\assets\rightBtn.png"
+
 
 # Define the navigation bar layout
 navbar = html.Div([
@@ -49,7 +54,9 @@ app.layout = html.Div([
         html.H3('Page Content'),
         dcc.Markdown('''
             This is the default content of the page.
-        '''),
+        ''')
+    ]),
+    html.Div([
         dcc.Graph(
             id='grid',
             figure=add_grid()
@@ -88,7 +95,18 @@ app.layout = html.Div([
         html.Div('Seconds', style={'position':'absolute', 'margin-left': '149px'}),
     ]),
     html.Div([
-        html.Button()
+        html.Button([
+        html.Img(src=upBtn, style={'width': '70px', 'height': '70px', 'margin-right': '5px'})
+    ], id='upBtn'),
+    html.Button([
+        html.Img(src=downBtn, style={'width': '70px', 'height': '70px', 'margin-right': '5px'})
+    ], id='downBtn'),
+    html.Button([
+        html.Img(src=leftBtn, style={'width': '70px', 'height': '70px', 'margin-right': '5px'})
+    ], id='leftBtn'),
+    html.Button([
+        html.Img(src=rightBtn, style={'width': '70px', 'height': '70px', 'margin-right': '5px'})
+    ], id='rightBtn')
     ])
 ])
 
