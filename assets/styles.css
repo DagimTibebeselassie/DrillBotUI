@@ -1,0 +1,28 @@
+/* styles.css */
+
+/* Custom styling for the navigation bar */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.navbar {
+    background-color: #006eff; /* Change the background color */
+    height: 80px;
+}
+
+.navbar h1{
+    color: black;
+}
+
+.navbar A{
+    text-decoration: none;
+
+}
+
+.navbar-brand {
+    color: #ff0000; /* Change the color of the brand text */
+}
+
+.nav-link {
+    color: #0066ff; /* Change the color of the navigation links */
+}
