@@ -107,6 +107,12 @@ app.layout = html.Div([
     html.Button([
         html.Img(src=rightBtn, style={'width': '70px', 'height': '70px', 'margin-right': '5px'})
     ], id='rightBtn')
+    ]),
+    html.Div([
+        html.Button("RESET", id = "reset_button", className = "reset")
+    ]),
+    html.Div([
+        html.Button("SAMPLE", id = "sample_button", className = "sample")
     ])
 ])
 
