@@ -66,27 +66,27 @@ app.layout = html.Div([
             dcc.Input(
                 id='samples',
                 type='number',
+                className = "samples",
                 value=1,  # Default value
                 min=0,
-                style={'height': '35','width': '45px', "border-radius":'50px'}
             ),
         ], style={'display': 'inline-block', 'margin-right': '20px'}),
         html.Div([
             dcc.Input(
                 id='minutes',
                 type='number',
+                className = "minute",
                 value=0,  # Default value
                 min=0,
-                style={'height': '35','width': '45px', "border-radius":'50px'}
             ),
         ], style={'display': 'inline-block', 'margin-right': '20px'}),
         html.Div([
             dcc.Input(
                 id='seconds',
+                className = "seconds",
                 type='number',
                 value=0,  # Default value
                 min=0,
-                style={'height': '35','width': '45px', "border-radius":'50px'}
             ),
         ], style={'display': 'inline-block'}),
     html.Div([
