@@ -8,6 +8,7 @@ upBtn = r"\assets\UpBtn.png"
 downBtn = r"\assets\downBtn.png"
 leftBtn = r"\assets\leftBtn.png"
 rightBtn = r"\assets\rightBtn.png"
+stopBtn = r"\assets\stopBtn.png"
 
 
 # Define the navigation bar layout
@@ -68,7 +69,7 @@ app.layout = html.Div([
                 type='number',
                 value=1,  # Default value
                 min=0,
-                style={'height': '35','width': '45px', "border-radius":'50px'}
+                style={'position': 'absolute','height': '35px','width': '55px', "border-radius":'50px','left': '1050px','top': '600px','text-align': 'center'}
             ),
         ], style={'display': 'inline-block', 'margin-right': '20px'}),
         html.Div([
@@ -77,7 +78,7 @@ app.layout = html.Div([
                 type='number',
                 value=0,  # Default value
                 min=0,
-                style={'height': '35','width': '45px', "border-radius":'50px'}
+                style={'position': 'absolute','height': '35px','width': '55px', "border-radius":'50px','left': '1125px','top': '600px','text-align': 'center' }
             ),
         ], style={'display': 'inline-block', 'margin-right': '20px'}),
         html.Div([
@@ -86,13 +87,13 @@ app.layout = html.Div([
                 type='number',
                 value=0,  # Default value
                 min=0,
-                style={'height': '35','width': '45px', "border-radius":'50px'}
+                style={'position': 'absolute','height': '35px','width': '55px', "border-radius":'50px','left': '1199px','top': '600px','text-align': 'center'}
             ),
         ], style={'display': 'inline-block'}),
     html.Div([
-        html.Div('Samples', style={'position':'absolute'}),
-        html.Div('Minutes', style={'position':'absolute','margin-left': '75px'}),
-        html.Div('Seconds', style={'position':'absolute', 'margin-left': '149px'}),
+        html.Div('Samples', style={'position':'absolute','left': '1050px'}),
+        html.Div('Minutes', style={'position':'absolute','left': '1125px'}),
+        html.Div('Seconds', style={'position':'absolute','left': '1199px'}),
     ]),
     html.Div([
         html.Button([
@@ -106,7 +107,10 @@ app.layout = html.Div([
     ], id='leftBtn'),
     html.Button([
         html.Img(src=rightBtn, style={'width': '70px', 'height': '70px', 'margin-right': '5px'})
-    ], id='rightBtn')
+    ], id='rightBtn'),
+    html.Button([
+        html.Img(src=stopBtn, id="stopImg")
+    ], id='stopBtn')
     ]),
     html.Div([
         html.Button("RESET", id = "reset_button", className = "reset")
