@@ -90,6 +90,22 @@
 #rightBtn:hover{
     transform: translateX(10px);
 }
+.samples{
+    height: 35px;
+    width: 45px;
+    border-radius: 50px;
+    text-align: center;
+}
+.minutes{
+    height:35px;
+    width: 45px;
+    border-radius: 50px;
+}
+.seconds{
+    height:35px;
+    width: 45px;
+    border-radius: 50px;
+}
 
 .reset{
     margin-top: 50px;
@@ -120,3 +136,4 @@
     align-items: center;
     box-shadow: 2px 2px 2px;
 }
+
