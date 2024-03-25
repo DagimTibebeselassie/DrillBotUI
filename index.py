@@ -29,7 +29,8 @@ def add_grid():
         yaxis=dict(title='Y', range=[-1, 1]),
         width=500,
         height=500,
-        showlegend=False
+        showlegend=False,
+        paper_bgcolor='gray',
     )
 
     # Create the scatter plot (grid)
@@ -69,7 +70,7 @@ app.layout = html.Div([
                 type='number',
                 value=1,  # Default value
                 min=0,
-                style={'position': 'absolute','height': '35px','width': '55px', "border-radius":'50px','left': '1050px','top': '600px','text-align': 'center'}
+                style={'position': 'absolute','height': '45px','width': '75px', "border-radius":'50px','left': '1000px','top': '500px','text-align': 'center'}
             ),
         ], style={'display': 'inline-block', 'margin-right': '20px'}),
         html.Div([
@@ -78,7 +79,7 @@ app.layout = html.Div([
                 type='number',
                 value=0,  # Default value
                 min=0,
-                style={'position': 'absolute','height': '35px','width': '55px', "border-radius":'50px','left': '1125px','top': '600px','text-align': 'center' }
+                style={'position': 'absolute','height': '45px','width': '75px', "border-radius":'50px','left': '1100px','top': '500px','text-align': 'center' }
             ),
         ], style={'display': 'inline-block', 'margin-right': '20px'}),
         html.Div([
@@ -87,13 +88,13 @@ app.layout = html.Div([
                 type='number',
                 value=0,  # Default value
                 min=0,
-                style={'position': 'absolute','height': '35px','width': '55px', "border-radius":'50px','left': '1199px','top': '600px','text-align': 'center'}
+                style={'position': 'absolute','height': '45px','width': '75px', "border-radius":'50px','left': '1200px','top': '500px','text-align': 'center'}
             ),
         ], style={'display': 'inline-block'}),
     html.Div([
-        html.Div('Samples', style={'position':'absolute','left': '1050px'}),
-        html.Div('Minutes', style={'position':'absolute','left': '1125px'}),
-        html.Div('Seconds', style={'position':'absolute','left': '1199px'}),
+        html.Div('Samples', style={'position':'absolute','left': '1010px','top': '550px'}),
+        html.Div('Minutes', style={'position':'absolute','left': '1110px','top': '550px'}),
+        html.Div('Seconds', style={'position':'absolute','left': '1210px','top': '550px'}),
     ]),
     html.Div([
         html.Button([
