@@ -118,7 +118,38 @@ app.layout = html.Div([
     ]),
     html.Div([
         html.Button("SAMPLE", id = "sample_button", className = "sample")
-    ])
+    ]),
+    html.Div([
+    html.Div([
+        html.Div([
+            html.H5("GPS Data"),
+            html.Div([
+                html.P("X:"),
+                html.P("0.00"),
+                html.P("Y:"),
+                html.P("0.00")
+            ], style={'margin-right': '1px', "width": "5px"})
+        ], style={'flex': '1', "width": "10px"}),
+        html.Div([
+            html.H5("GPS Data"),
+            html.Div([
+                html.P("X:"),
+                html.P("0.00"),
+                html.P("Y:"),
+                html.P("0.00")
+            ], style={'margin-right': '1px', "width": "5px"})
+        ], style={'flex': '1'}),
+        html.Div([
+            html.H5("GPS Data"),
+            html.Div([
+                html.P("X:"),
+                html.P("0.00"),
+                html.P("Y:"),
+                html.P("0.00")
+            ], style={'margin-right': '1px', "width": "50px"})
+        ], style={'flex': '1'}),
+    ], style={'display': 'flex'})
+])
 ])
 
 # Callback to update the page content based on the URL and add the grid when needed
