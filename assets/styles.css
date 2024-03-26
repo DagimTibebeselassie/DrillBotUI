@@ -6,9 +6,7 @@
     padding: 0px;
 }
 .navbar {
-    background: #536976;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #292E49, #536976);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #292E49, #536976); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+    background: radial-gradient(circle at 12.3% 19.3%, rgb(85, 88, 218) 0%, rgb(95, 209, 249) 100.2%);
     height: 80px;
     display: flex;
     align-items: center;
@@ -16,18 +14,18 @@
     font-family: "Cambay", sans-serif;
 }
 
-body{
-    background: gray;
-    width: 100%
-}
 
 .logo {
     float: left;
     margin-right: auto;
+    animation: breathing 12s infinite;
+    color: rgb(255, 255, 255);
+    padding-left: 30px;
 }
 
 .nav-link {
     margin-right: 10px; /* Adjust as needed */
+    color: black;
 }
 
 .navbar h1{
@@ -41,13 +39,7 @@ body{
     padding: 10px;
 }
 
-.navbar-brand {
-    color: #ff0000; /* Change the color of the brand text */
-}
 
-.nav-link {
-    color: #000000; /* Change the color of the navigation links */
-}
 
 #upBtn{
     position: absolute;
@@ -58,6 +50,7 @@ body{
     background-color: transparent;
     left: 1000px;
     top: 205px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 #upBtn:hover{
@@ -111,6 +104,7 @@ body{
     background-color: transparent;
     left: 1000px;
     top: 350px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 #leftBtn:hover{
@@ -150,7 +144,6 @@ body{
     align-items: center;
     box-shadow: 2px 2px 2px #000000;
     transition: all 1s;
-    
 }
 
 .reset:hover{
