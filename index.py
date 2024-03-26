@@ -11,13 +11,12 @@ rightBtn = r"\assets\rightBtn.png"
 stopBtn = r"\assets\stopBtn.png"
 
 
-# Define the navigation bar layout
 navbar = html.Div([
     html.Nav([
         html.H1("FOCUSbot", className="logo"),
-        html.A("Home", href="/home", className="nav-link"),
-        html.A("Control Panel", href="/page-1", className="nav-link"),
-        html.A("Data Collection", href="/page-2", className="nav-link"),
+        html.A("Home", href="/home", className="nav-link", style={"color": "black", "font-size": "20px"}),
+        html.A("Control Panel", href="/page-1", className="nav-link", style={"color": "black", "font-size": "20px"}),
+        html.A("Data Collection", href="/page-2", className="nav-link", style={"color": "black", "font-size": "20px"}),
     ], className="navbar")
 ])
 
@@ -30,7 +29,6 @@ def add_grid():
         width=500,
         height=500,
         showlegend=False,
-        paper_bgcolor='gray',
     )
 
     # Create the scatter plot (grid)
@@ -48,7 +46,7 @@ def add_grid():
     return fig
 
 
-# Define the layout for the entire application
+
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     navbar,
@@ -59,27 +57,28 @@ app.layout = html.Div([
         ''')
     ]),
     html.Div([
-        dcc.Graph(
-            id='grid',
-            figure=add_grid()
-        )
-    ]),
+    dcc.Graph(
+        id='grid',
+        figure=add_grid(),
+        style={'width': '50%', 'height': 'auto'}
+    )
+], style={'width': '30%', 'margin': '10px'}),
     html.Div([
             dcc.Input(
                 id='samples',
                 type='number',
-                value=1,  # Default value
+                value=1,  
                 min=0,
-                style={'position': 'absolute','height': '45px','width': '75px', "border-radius":'50px','left': '1000px','top': '500px','text-align': 'center'}
+                style={'position': 'absolute','height': '45px','width': '75px', "border-radius":'20px','left': '1000px','top': '500px','text-align': 'center'}
             ),
         ], style={'display': 'inline-block', 'margin-right': '20px'}),
         html.Div([
             dcc.Input(
                 id='minutes',
                 type='number',
-                value=0,  # Default value
+                value=0,  
                 min=0,
-                style={'position': 'absolute','height': '45px','width': '75px', "border-radius":'50px','left': '1100px','top': '500px','text-align': 'center' }
+                style={'position': 'absolute','height': '45px','width': '75px', "border-radius":'20px','left': '1100px','top': '500px','text-align': 'center' }
             ),
         ], style={'display': 'inline-block', 'margin-right': '20px'}),
         html.Div([
@@ -88,7 +87,7 @@ app.layout = html.Div([
                 type='number',
                 value=0,  # Default value
                 min=0,
-                style={'position': 'absolute','height': '45px','width': '75px', "border-radius":'50px','left': '1200px','top': '500px','text-align': 'center'}
+                style={'position': 'absolute','height': '45px','width': '75px', "border-radius":'20px','left': '1200px','top': '500px','text-align': 'center'}
             ),
         ], style={'display': 'inline-block'}),
     html.Div([
@@ -97,7 +96,7 @@ app.layout = html.Div([
         html.Div('Seconds', style={'position':'absolute','left': '1210px','top': '550px'}),
     ]),
     html.Div([
-        html.Button([
+    html.Button([
         html.Img(src=upBtn, style={'width': '70px', 'height': '70px', 'margin-right': '5px'})
     ], id='upBtn'),
     html.Button([
@@ -112,7 +111,7 @@ app.layout = html.Div([
     html.Button([
         html.Img(src=stopBtn, id="stopImg")
     ], id='stopBtn')
-    ]),
+], style={"width": "10px"}),
     html.Div([
         html.Button("RESET", id = "reset_button", className = "reset")
     ]),
@@ -120,35 +119,43 @@ app.layout = html.Div([
         html.Button("SAMPLE", id = "sample_button", className = "sample")
     ]),
     html.Div([
+        html.Div([
+            html.H5("Accelerometer"),
+            html.Div([
+                html.P("X:"),
+                html.P("0.00"),
+                html.P("Y:"),
+                html.P("0.00"),
+                html.P("Z:"),
+                html.P("0.00")
+            ], style={"width": "15px"})
+        ], style={'flex': '1', 'flex-grow': 0.2}),
+        html.Div([
+            html.H5("Gyroscope"),
+            html.Div([
+                html.P("X:"),
+                html.P("0.00"),
+                html.P("Y:"),
+                html.P("0.00"),
+                html.P("Z:"),
+                html.P("0.00")
+            ], style={"width": "15px"})
+        ], style={'flex': '1', 'flex-grow': 0.2}),
+        html.Div([
+            html.H5("GPS Data"),
+            html.Div([
+                html.P("Lat:"),
+                html.P("0.00"),
+                html.P("Long:"),
+                html.P("0.00")
+            ], style={"width": "15px"})
+        ], style={'flex': '1', 'flex-grow': 0.2}),
+    ], style={'display': 'flex', "width": "700px"}),
     html.Div([
-        html.Div([
-            html.H5("GPS Data"),
-            html.Div([
-                html.P("X:"),
-                html.P("0.00"),
-                html.P("Y:"),
-                html.P("0.00")
-            ], style={'margin-right': '1px', "width": "5px"})
-        ], style={'flex': '1', "width": "10px"}),
-        html.Div([
-            html.H5("GPS Data"),
-            html.Div([
-                html.P("X:"),
-                html.P("0.00"),
-                html.P("Y:"),
-                html.P("0.00")
-            ], style={'margin-right': '1px', "width": "5px"})
-        ], style={'flex': '1'}),
-        html.Div([
-            html.H5("GPS Data"),
-            html.Div([
-                html.P("X:"),
-                html.P("0.00"),
-                html.P("Y:"),
-                html.P("0.00")
-            ], style={'margin-right': '1px', "width": "50px"})
-        ], style={'flex': '1'}),
-    ], style={'display': 'flex'})
+    html.Div([
+        html.Iframe(src="", width="200", height="200"),
+        html.Iframe(src="", width="200", height="200"),
+    ], style={'display': 'flex', 'flex-direction': 'column', 'align-items': 'flex-end'})
 ])
 ])
 
@@ -158,41 +165,20 @@ app.layout = html.Div([
 def update_page_content(pathname):
     if pathname == '/page-1':
         content = [
-            html.H3('Page 1'),
-            dcc.Markdown('''
-                This is the content of page 1.
-            ''')
+            html.H3('Control Panel')
         ]
     elif pathname == '/home':
         content = [
-            html.H3('Home'),
-            dcc.Markdown('''
-                This is the content of Home.
-            ''')
+            html.H3('Home')
         ]
     elif pathname == '/page-2':
         content = [
-            html.H3('Page 2'),
-            dcc.Markdown('''
-                This is the content of page 2.
-            ''')
+            html.H3('Data Collection')
         ]
     else:
         content = [
-            html.H3('Home'),
-            dcc.Markdown('''
-                This is the home page.
-            ''')
+            html.H3('Home')
         ]
-    
-    # Add the grid if needed
-    if pathname in ['/page-1', '/home', '/page-2']:
-        content.append(
-            dcc.Graph(
-                id='grid',
-                figure=add_grid()
-            )
-        )
     
     return content
 
